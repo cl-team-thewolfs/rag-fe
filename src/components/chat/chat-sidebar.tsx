@@ -58,7 +58,7 @@ const data = {
 export function ChatSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
     return (
 
-        <Sidebar collapsible="offcanvas" {...props}>
+        <Sidebar collapsible="offcanvas" variant="sidebar" {...props}>
             <SidebarHeader>
                 {/* OUR LOGO */}
                 <SidebarMenu>

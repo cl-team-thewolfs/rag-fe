@@ -147,7 +147,7 @@ const ChatKnowledgeBase = () => {
     return (
         <div className="w-full h-screen flex flex-col space-y-4 p-2">
             {/* Selected Knowledge Bases Section */}
-            <div className="min-h-0 flex-3/4  overflow-hidden">
+            <div className=" flex-4/5  overflow-hidden">
                 <Card className="h-full flex flex-col gap-2 py-3">
                     <CardHeader className='flex-shrink-0 pb-2 px-2'>
                         <CardTitle className="flex items-center gap-2 text-sm">
@@ -241,7 +241,7 @@ const ChatKnowledgeBase = () => {
             </div>
 
             {/* File Upload Section */}
-            <div className="min-h-0 flex-1/4">
+            <div className="flex-1/5">
                 <ChatUploader
                     uploadedFiles={uploadedFiles}
                     onFilesChange={setUploadedFiles}

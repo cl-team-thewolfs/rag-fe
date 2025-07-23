@@ -50,7 +50,7 @@ const ChatUploader: React.FC<ChatUploaderProps> = ({ uploadedFiles, onFilesChang
     };
 
     return (
-        <Card className="h-full flex flex-col items-center">
+        <Card className=" flex flex-col items-center p-0">
             {/* <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                     <Upload className="h-5 w-5" />
@@ -61,7 +61,7 @@ const ChatUploader: React.FC<ChatUploaderProps> = ({ uploadedFiles, onFilesChang
                 {/* Drag & Drop Area */}
                 <div
                     className={cn(
-                        "border-2 border-dashed rounded-lg p-6 text-center transition-colors flex-shrink-0",
+                        "  rounded-lg py-4 text-center transition-colors flex-shrink-0",
                         isDragging
                             ? "border-primary bg-primary/5"
                             : "border-muted-foreground/25 hover:border-primary/50"
@@ -81,13 +81,11 @@ const ChatUploader: React.FC<ChatUploaderProps> = ({ uploadedFiles, onFilesChang
                         handleFileUpload(e.dataTransfer.files);
                     }}
                 >
-                    <Upload className="h-8 w-8 mx-auto mb-2 text-muted-foreground" />
+                    <Upload className="h-5 w-8 mx-auto mb-2 text-muted-foreground" />
                     <h3 className="text-sm font-medium mb-1">
                         Drag & drop files here
                     </h3>
-                    <p className="text-xs text-muted-foreground mb-3">
-                        or click to select files
-                    </p>
+               
                     <Input
                         type="file"
                         multiple
