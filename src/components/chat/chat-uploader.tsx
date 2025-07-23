@@ -50,18 +50,18 @@ const ChatUploader: React.FC<ChatUploaderProps> = ({ uploadedFiles, onFilesChang
     };
 
     return (
-        <Card className="h-full flex flex-col items-center justify-center p-0">
+        <Card className="h-full flex flex-col items-center">
             {/* <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                     <Upload className="h-5 w-5" />
                     Upload Files
                 </CardTitle>
             </CardHeader> */}
-            <CardContent className="flex-grow flex flex-col  items-center justify-center space-y-4">
+            <CardContent className="flex-grow flex flex-col">
                 {/* Drag & Drop Area */}
                 <div
                     className={cn(
-                        "border-2 border-dashed rounded-lg px-18 py-4  text-center transition-colors flex-shrink-0",
+                        "border-2 border-dashed rounded-lg p-6 text-center transition-colors flex-shrink-0",
                         isDragging
                             ? "border-primary bg-primary/5"
                             : "border-muted-foreground/25 hover:border-primary/50"
