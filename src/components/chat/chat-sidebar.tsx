@@ -1,5 +1,5 @@
 import * as React from "react"
-import { GalleryVerticalEnd, User } from "lucide-react"
+import { GalleryVerticalEnd, PlusCircle, User } from "lucide-react"
 
 import {
     Sidebar,
@@ -16,6 +16,8 @@ import {
     SidebarMenuSubItem,
 } from "@/components/ui/sidebar"
 import { Avatar } from "../ui/avatar"
+import { Button } from "../ui/button"
+import { Separator } from "../ui/separator"
 
 const chatList = [
     {
@@ -44,10 +46,6 @@ const chatList = [
 const data = {
     navMain: [
         {
-            title: "New chat",
-            url: "#"
-        },
-        {
             title: "HISTORY",
             items: chatList,
 
@@ -63,8 +61,7 @@ export function ChatSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) 
                 {/* OUR LOGO */}
                 <SidebarMenu>
                     <SidebarMenuItem>
-                        <SidebarMenuButton
-                            asChild
+                        <SidebarGroupLabel
                             className="data-[slot=sidebar-menu-button]:!p-1.5"
                         >
                             <div className="flex items-center justify-center px-4 py-2 gap-6">
@@ -72,23 +69,45 @@ export function ChatSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) 
                                 <div className="text-lg font-semibold text-center uppercase">the wolfs</div>
 
                             </div>
-                        </SidebarMenuButton>
+                        </SidebarGroupLabel>
                     </SidebarMenuItem>
                 </SidebarMenu>
 
             </SidebarHeader>
             <SidebarContent>
-                <SidebarGroup className="group-data-[collapsible=icon]:hidden">
+                {/* CREATE NEW CHAT */}
+                <Separator />
+                <SidebarGroup className="">
+                    <SidebarGroupContent>
+                        <SidebarMenu className="gap-2">
+                            <SidebarMenuItem>
+                                <SidebarGroupLabel>
+                                    <Button className="w-full" variant="outline">
+                                        <a href="#" className="flex items-center justify-between w-full">
+                                            <p>
+
+                                                Create New Chat
+                                            </p>
+                                            <PlusCircle className="h-4 w-4" />
+                                        </a>
+                                    </Button>
+                                </SidebarGroupLabel>
+                            </SidebarMenuItem>
+                        </SidebarMenu>
+                    </SidebarGroupContent>
+                </SidebarGroup>
+                {/* HISTORY */}
+                <Separator />
+
+                <SidebarGroup className="group-data-[collapsible=icon]:hidden pt-0">
                     <SidebarGroupContent>
 
                         <SidebarMenu className="gap-2">
                             {data.navMain.map((item) => (
                                 <SidebarMenuItem key={item.title}>
-                                    <SidebarMenuButton asChild>
-                                        <a href={item.url} className="font-medium">
-                                            {item.title}
-                                        </a>
-                                    </SidebarMenuButton>
+                                    <SidebarGroupLabel>
+                                        {item.title}
+                                    </SidebarGroupLabel>
                                     {item.items?.length ? (
                                         <SidebarMenuSub className="ml-0 border-l-0 px-1.5">
                                             {item.items.map((item) => (
@@ -106,6 +125,7 @@ export function ChatSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) 
                     </SidebarGroupContent>
 
                 </SidebarGroup>
+
             </SidebarContent>
         </Sidebar>
     )

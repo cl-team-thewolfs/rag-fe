@@ -18,7 +18,7 @@ const ChatInput = ({ onSend }) => {
     };
 
     return (
-        <form onSubmit={handleSubmit} className="flex w-full">
+        <form onSubmit={handleSubmit} className="flex w-full pt-3">
             <Input
                 value={message}
                 onChange={handleChange}
